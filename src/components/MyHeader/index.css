@@ -1,0 +1,17 @@
+.root {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header_items {
+  display: flex;
+  gap: 5px;
+}
+.header_item {
+  color: black;
+  text-decoration: none;
+}
+.header_item:hover {
+  text-decoration: underline;
+  /* text-decoration: none; */
+}

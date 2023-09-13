@@ -1,0 +1,51 @@
+.root {
+  background-color: green;
+  border: solid 5px greenyellow;
+  display: flex;
+}
+
+.root__picture {
+  width: 300px;
+}
+
+.root__data {
+  flex-grow: 1;
+}
+
+.modal_container {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  /* display: grid; */
+  place-items: center;
+  background-color: none;
+  transition: transform 0.3s;
+}
+
+.modal_content {
+  width: 50vw;
+  min-width: 350px;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 1rem;
+  position: relative;
+}
+.modal_close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: .5rem;
+}
+
+.modal_show-no {
+  transform: scale(1);
+}
+.modal_input {
+}
+.buttonsContent{
+  display: flex;
+  flex-direction: row;
+}

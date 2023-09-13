@@ -1,0 +1,17 @@
+.root {
+  background-color: rgb(62, 170, 170);
+  /* color: white; */
+  border-radius: 5px;
+  padding: 10px;
+  border: none;
+}
+
+.root:hover {
+  background-color: rgb(86, 210, 210);
+  transition: 1s;
+}
+
+.root:active {
+  background-color: rgb(25, 129, 129);
+  transition: 1s;
+}
