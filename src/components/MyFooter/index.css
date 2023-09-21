@@ -1,9 +1,10 @@
 .root {
   height: 144px;
-  background-color: pink;
+  background-color: #676f58;
   display: flex;
   justify-content: space-between;
   position: absolute;
   bottom: 0;
   width: 100%;
+  color: #bdc6b5;
 }
