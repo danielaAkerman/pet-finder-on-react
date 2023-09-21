@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import css from "./MyLostPetItem.css";
-import { MyButton } from "../MyButton";
 import { Link, useNavigate } from "react-router-dom";
 import { MainButton } from "../../ui/buttons";
 import { ModalDeletePet } from "../ModalDeletePet";
