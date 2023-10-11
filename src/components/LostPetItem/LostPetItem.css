@@ -1,6 +1,6 @@
 .root {
   background-color: rgb(196, 198, 164);
-  /* border: solid 5px greenyellow; */
+  border-radius: 25px;
   box-shadow: #4c6667;
   display: flex;
   flex-direction: column;
@@ -10,12 +10,26 @@
 .root__picture {
   width: 100%;
   height: auto;
+  border-radius: 25px 25px 0px 0px
 }
 
 .root__data {
-  /* flex-grow: 1; */
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  /* gap: 5px */
+}
+
+.root__button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  gap: 10px;
+  border: solid 5px red
 }
 
 .modal {
@@ -41,8 +55,37 @@
   background-color: #fff;
   border-radius: 20px;
 }
+
 .modal_show {
   transform: scale(1);
 }
-.modal_input {
+
+.modal_input {}
+
+.button {
+  background-color: pink;
+  margin: auto auto 20px auto;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+
+}
+
+.button:hover {
+  /* background-color: rgb(86, 210, 210); */
+  background-color: #858e79;
+  transition: 1s;
+}
+
+.button:active {
+  /* background-color: rgb(25, 129, 129); */
+  background-color: #545b49;
+  transition: 1s;
+}
+
+.line {
+  border: solid 1px;
+  border-color: #545b49;
+  width: 200px;
+
 }

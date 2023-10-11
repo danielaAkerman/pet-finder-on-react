@@ -43,10 +43,10 @@ function ModalDeletePet({ isOpen, onClose }) {
           <div className={css.buttonsContent}>
 
           <div onClick={DeletePet}>
-            <MainButton type="button">YES</MainButton>
+            <MainButton>YES</MainButton>
           </div>
           <div onClick={onClose}>
-            <MainButton type="button">NO</MainButton>
+            <MainButton>NO</MainButton>
           </div>
           </div>
         </div>

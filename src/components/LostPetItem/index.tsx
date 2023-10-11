@@ -4,7 +4,10 @@ import css from "./LostPetItem.css";
 import { ModalLostPetItem } from "../ModalLostPetItem";
 import { useRecoilState } from "recoil";
 import { petDataModal } from "../../atoms";
-// import { useNavigate } from "react-router-dom";
+import { MainButton } from "../../ui/buttons";
+import { MyText } from "../../ui/MyText";
+import { ModalDeletePet } from "../ModalDeletePet";
+import { useNavigate } from "react-router-dom";
 
 // const url = "https://lostpets.onrender.com";
 
@@ -13,6 +16,7 @@ type LostPetItemProps = {
   ubication: string;
   picture: string;
   petId: any;
+  owner?: string
 };
 
 // function setMostrarModal(){
@@ -24,34 +28,72 @@ type LostPetItemProps = {
 function LostPetItem(props: LostPetItemProps) {
   const { name, ubication, picture, petId } = props;
 
+  const navigate = useNavigate()
+
   const [mostrar, setMostrar] = useState(false);
 
   const [petDataModalState, setpetDataModalState] = useRecoilState(petDataModal);
+
+  const [mostrarMyPet, setMostrarMyPet] = useState(false);
+
+  const [myPetDataModalState, setMyPetDataModalState] = useRecoilState(petDataModal);
+
+  function EditPet() {
+    navigate("/editar-mascota", { replace: true, state: props });
+  }
 
   return (
     <div className={css.root}>
       <img src={picture} className={css.root__picture} />
       <div className={css.root__data}>
-        <h2>{name}</h2>
-        <h3>{ubication}</h3>
-        {/* <button onClick={showModalForm}>LO VISTE?</button> */}
+        <MyText styleName="petName">{name}</MyText >
+        <hr className={css.line} />
+        <MyText styleName="petUbication">{ubication}</MyText>
+      </div>
+      {/* <div className={css.root__button}> */}
 
-        <button
-          onClick={() => {
-            setMostrar(true),
-              setpetDataModalState({
+      {props.owner ?
+        <div className={css.root__button}>
+          <div onClick={EditPet}>
+            <MainButton >Editar Mascota</MainButton>
+          </div>
+
+          <div onClick={() => {
+            setMostrarMyPet(true),
+              setMyPetDataModalState({
                 name: name,
                 petId: petId,
               });
-          }}
-        >
-          LO VISTE?
-        </button>
-        <ModalLostPetItem isOpen={mostrar} onClose={() => setMostrar(false)}>
-          children
-        </ModalLostPetItem>
+          }}>
+            <MainButton>Borrar Publicación</MainButton>
+          </div>
 
-      </div>
+          <ModalDeletePet isOpen={mostrarMyPet} onClose={() => setMostrarMyPet(false)}></ModalDeletePet>
+
+        </div>
+        :
+
+
+        <div className={css.root__button} 
+        onClick={() => {
+          setMostrar(true),
+            setpetDataModalState({
+              name: name,
+              petId: petId,
+            });
+        }}>
+          <MainButton>LO VISTE?</MainButton>
+        </div>
+
+      }
+
+
+
+      {/* </div> */}
+      <ModalLostPetItem isOpen={mostrar} onClose={() => setMostrar(false)}>
+        children
+      </ModalLostPetItem>
+
     </div>
   );
 }

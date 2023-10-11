@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import {  lostPetsNearYouSelector } from "../../atoms";
 import { useRecoilState, useRecoilValue } from "recoil";
-// import { state } from "../../state";
 import { LostPetItem } from "../../components/LostPetItem";
 import css from "./index.css";
 
