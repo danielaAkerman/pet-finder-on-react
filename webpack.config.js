@@ -36,7 +36,7 @@ module.exports = {
           {
             loader: 'url-loader',
             options: {
-              esModule: true,
+              esModule: false,
             },
           },
         ],
