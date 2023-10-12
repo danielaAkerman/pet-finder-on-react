@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 // import Map from 'react-map-gl';
 // import 'mapbox-gl/dist/mapbox-gl.css';
 import { MyInput } from "../../ui/MyInput";
-import { MainButton } from "../../ui/buttons";
+import { MainButton } from "../../ui/MyButton";
 
 
 const url = "https://lostpets.onrender.com";

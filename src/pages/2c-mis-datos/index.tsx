@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { userDataAtom } from "../../atoms";
 import { useRecoilState } from "recoil";
 import { MyInput } from "../../ui/MyInput"
-import { MainButton } from "../../ui/buttons";
+import { MainButton } from "../../ui/MyButton";
 
 const url = "https://lostpets.onrender.com";
 

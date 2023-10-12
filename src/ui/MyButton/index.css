@@ -1,20 +1,21 @@
 .root {
-  /* background-color: rgb(62, 170, 170); */
+  width: 144px;
   background-color: #667058;
-  /* color: white; */
   border-radius: 5px;
   padding: 10px;
   border: none;
 }
 
 .root:hover {
-  /* background-color: rgb(86, 210, 210); */
   background-color: #858e79;
   transition: 1s;
 }
 
 .root:active {
-  /* background-color: rgb(25, 129, 129); */
   background-color: #545b49;
   transition: 1s;
+}
+
+.large {
+  width: 100%;
 }

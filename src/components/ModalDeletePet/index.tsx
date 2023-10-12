@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import css from "./index.css";
 import { useRecoilState } from "recoil";
 import { petDataModal } from "../../atoms";
-import { MainButton } from "../../ui/buttons";
+import { MainButton } from "../../ui/MyButton";
 
 const url = "https://lostpets.onrender.com";
 

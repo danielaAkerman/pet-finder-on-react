@@ -6,15 +6,21 @@ type MyInputProps = {
   label: string
   name: string;
   type?: string
+  textarea?: boolean
 };
 
 function MyInput(props: MyInputProps) {
-  const { name, defaultValue, label, type } = props;
+  const { name, defaultValue, label, type, textarea } = props;
 
   return (
     <div className={css.root}>
       <label>{label}</label>
-      <input type={type} name={name} defaultValue={defaultValue} className={css.input}/>
+      {
+        textarea ?
+          <textarea name={name} defaultValue={defaultValue} className={css.input} />
+          :
+          <input type={type} name={name} defaultValue={defaultValue} className={css.input} />
+      }
     </div>
 
   );

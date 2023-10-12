@@ -4,7 +4,7 @@ import css from "./LostPetItem.css";
 import { ModalLostPetItem } from "../ModalLostPetItem";
 import { useRecoilState } from "recoil";
 import { petDataModal } from "../../atoms";
-import { MainButton } from "../../ui/buttons";
+import { MainButton } from "../../ui/MyButton";
 import { MyText } from "../../ui/MyText";
 import { ModalDeletePet } from "../ModalDeletePet";
 import { useNavigate } from "react-router-dom";
@@ -75,14 +75,14 @@ function LostPetItem(props: LostPetItemProps) {
 
 
         <div className={css.root__button} 
-        onClick={() => {
+          onClick={() => {
           setMostrar(true),
             setpetDataModalState({
               name: name,
               petId: petId,
             });
         }}>
-          <MainButton>LO VISTE?</MainButton>
+          <MainButton>¿Lo viste?</MainButton>
         </div>
 
       }

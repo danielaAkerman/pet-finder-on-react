@@ -2,7 +2,7 @@ import React, { useState } from "react";
 // import { useLogin } from "../../hooks/login"
 import { useNavigate } from "react-router-dom";
 import { MyInput } from "../../ui/MyInput"
-import { MainButton } from "../../ui/buttons"
+import { MainButton } from "../../ui/MyButton"
 import { useRecoilState } from "recoil";
 import { userDataAtom } from "../../atoms";
 // import css from "./index.css";

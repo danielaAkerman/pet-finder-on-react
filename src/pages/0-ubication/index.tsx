@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { useNavigate } from "react-router-dom";
 import { userDataAtom } from "../../atoms";
-import { MainButton } from "../../ui/buttons";
+import { MainButton } from "../../ui/MyButton";
 // import { init } from "../../api";
 
 // const search = require("../../assets/img/search.jpeg");

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { MyInput } from "../../ui/MyInput";
-import { MainButton } from "../../ui/buttons";
+import { MainButton } from "../../ui/MyButton";
 import { useRecoilValue } from "recoil";
 import { userIdSelector } from "../../atoms";
 

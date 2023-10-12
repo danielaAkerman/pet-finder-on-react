@@ -1,7 +1,7 @@
 .root {
   display: flex;
   flex-direction: column;
-  margin: 20px 0 20px 0;
+  margin: 10px 0 10px 0;
   max-width: 450px;
 }
 
@@ -9,10 +9,11 @@
   border-radius: 5px;
   border: none;
   margin-top: 5px;
+  background-color: #a3ab94;
 }
 
 .input:focus {
   outline: none;
-  background-color: pink;
-  transition: 1s;
+  background-color: #ebe8e3;
+  transition: .5s;
 }
