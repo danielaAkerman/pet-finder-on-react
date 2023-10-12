@@ -30,11 +30,14 @@ module.exports = {
             },
           },
         ],
+      }, {
+        test: /\.(png|jpe?g)$/i,
+        use: "url-loader",
       },
     ],
   },
   resolve: {
-    extensions: [".ts", ".tsx", ".js"],
+    extensions: [".ts", ".tsx", ".js", ".png", "jpeg"],
   },
   output: {
     path: path.resolve(__dirname, "dist"),

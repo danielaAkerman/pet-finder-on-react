@@ -1,10 +1,12 @@
-import React, { useEffect } from "react";
+import React from "react";
 import css from "./index.css";
 import { userFullnameSelector } from "../../atoms";
-import { useRecoilValue, useResetRecoilState } from "recoil";
+import { useRecoilValue } from "recoil";
 import { Link, useNavigate } from "react-router-dom";
 import { userDataAtom } from "../../atoms";
 import { useRecoilState } from "recoil";
+// import "../../assets"
+import pet from "./pet.png"
 
 // import { ubicationState } from "../../atoms";
 
@@ -50,7 +52,9 @@ function MyHeader() {
   }
   return (
     <div className={css.root}>
-      <span onClick={brandLogo}>LOGO</span>
+      <div onClick={brandLogo} className={css.img_container}>
+        <img src={pet}  className={css.img}  />
+      </div>
       {userFullname ? (
         <div className={css.header_items}>
           <span className={css.header_item}>Hola {userFullname}</span>

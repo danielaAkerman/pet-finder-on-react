@@ -2,17 +2,29 @@
   display: flex;
   justify-content: space-between;
   background-color: #a3ab94;
+  height: 44px;
 }
 
 .header_items {
   display: flex;
   gap: 5px;
 }
+
 .header_item {
   color: black;
   text-decoration: none;
 }
+
 .header_item:hover {
   text-decoration: underline;
   /* text-decoration: none; */
+}
+
+.img_container {
+  height: 100%;
+}
+
+.img {
+  height: 100%;
+
 }
