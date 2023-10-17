@@ -10,10 +10,10 @@ function Layout() {
     <div className={css.root}>
       <div className={css.content}>
 
-      <MyHeader></MyHeader>
-      <Suspense fallback={<Waiting />}>
-        <Outlet />
-      </Suspense>
+        <MyHeader></MyHeader>
+        <Suspense fallback={<Waiting />}>
+          <Outlet />
+        </Suspense>
       </div>
       <MyFooter />
     </div>

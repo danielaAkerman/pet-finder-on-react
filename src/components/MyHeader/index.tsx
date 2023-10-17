@@ -5,8 +5,8 @@ import { useRecoilValue } from "recoil";
 import { Link, useNavigate } from "react-router-dom";
 import { userDataAtom } from "../../atoms";
 import { useRecoilState } from "recoil";
-// import "../../assets"
-import pet from "./pet.png"
+import pet from "../../assets/img/dog.png"
+
 
 // import { ubicationState } from "../../atoms";
 

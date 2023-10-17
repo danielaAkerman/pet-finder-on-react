@@ -3,7 +3,7 @@ import css from "./index.css";
 
 function Waiting() {
   return (
-    <div>
+    <div  className={css["root"]}>
       <div
         aria-label="Orange and tan hamster running in a metal wheel"
         role="img"

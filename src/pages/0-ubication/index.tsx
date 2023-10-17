@@ -6,6 +6,7 @@ import { useRecoilState } from "recoil";
 import { useNavigate } from "react-router-dom";
 import { userDataAtom } from "../../atoms";
 import { MainButton } from "../../ui/MyButton";
+import css from "./index.css";
 // import { init } from "../../api";
 
 // const search = require("../../assets/img/search.jpeg");
@@ -66,7 +67,7 @@ function UbicationPage() {
   }
 
   return (
-    <div>
+    <div className={css.root}>
       <div className="img-container">
         {/* <img src={search} className="img-fluid" /> */}
       </div>

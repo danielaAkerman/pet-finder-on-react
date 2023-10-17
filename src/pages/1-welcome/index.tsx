@@ -15,7 +15,7 @@ function PetsPage() {
 
   
   return (
-    <div>
+    <div className={css.root}>
       <h1>Mascotas perdidas cerca tuyo</h1>
       <div className={css.results} id="results">
         {mascotasCercanas.map((m) => (
