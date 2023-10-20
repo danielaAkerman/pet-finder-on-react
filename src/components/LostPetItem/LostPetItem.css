@@ -20,7 +20,8 @@
   align-items: center;
   justify-content: center;
   padding: 10px;
-  /* gap: 5px */
+  gap: 5px
+
 }
 
 .root__button {
@@ -29,7 +30,6 @@
   align-items: center;
   justify-content: center;
   padding: 20px;
-  gap: 10px;
 }
 
 .modal {
@@ -83,8 +83,10 @@
   transition: 1s;
 }
 
-.line {
-  border: solid 1px;
-  border-color: #545b49;
-  width: 200px;
+.line-divisor{
+  margin: 25px;
+  width: 75%;
+  border: none;
+  background-color: black;
+  height: 1px;
 }

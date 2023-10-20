@@ -1,6 +1,8 @@
 .root {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
+  align-items: center;
 }
 
 .header_items {
@@ -14,4 +16,8 @@
 .header_item:hover {
   text-decoration: underline;
   /* text-decoration: none; */
+}
+.line-divisor{
+  margin: 25px;
+  width: 75%;
 }

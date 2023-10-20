@@ -5,7 +5,7 @@ import { MyInput } from "../../ui/MyInput"
 import { MainButton } from "../../ui/MyButton"
 import { useRecoilState } from "recoil";
 import { userDataAtom } from "../../atoms";
-// import css from "./index.css";
+import css from "./index.css";
 // import { userFullnameSelector } from "../../atoms";
 // import { useRecoilValue, useResetRecoilState } from "recoil";
 // import { Link, useNavigate } from "react-router-dom";
@@ -93,7 +93,7 @@ function LoginComp() {
   }
   return (
 
-    <div>
+    <div className={css["root"]}>
       <h1>Log in</h1>
 
       <form onSubmit={loggedForm}>
@@ -102,22 +102,12 @@ function LoginComp() {
         <MyInput name="password" label="Contraseña" type="password" />
         <MainButton>Ingresar</MainButton>
 
-        {/* <div>
-          <label>Email</label>
-          <input type="email" name="email" />
-        </div>
-
-        <div>
-          <label>Contraseña</label>
-          <input type="password" name="password" />
-        </div> */}
-
-        {/* <button>Ingresar</button> */}
       </form>
-
+      <hr className={css["line-divisor"]} />
       <div>
         <label>¿Aún no tenés cuenta?</label>
-        <button onClick={navigateToCrearCuenta}>Crear cuenta</button>
+        <div onClick={navigateToCrearCuenta}>
+          <MainButton>Crear cuenta</MainButton></div>
       </div>
     </div>)
 

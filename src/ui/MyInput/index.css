@@ -11,6 +11,8 @@
   margin-top: 5px;
   background-color: #a3ab94;
   height: 21px;
+  width: 100%;
+  min-width: 350px;
 }
 
 .input:focus {

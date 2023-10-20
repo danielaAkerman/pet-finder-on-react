@@ -19,6 +19,7 @@
   justify-content: center;
   gap: 5px;
   position: relative;
+  min-width: 144px;
 }
 
 .header_item {

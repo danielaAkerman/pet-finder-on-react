@@ -47,7 +47,7 @@ function LostPetItem(props: LostPetItemProps) {
       <img src={picture} className={css.root__picture} />
       <div className={css.root__data}>
         <MyText styleName="petName">{name}</MyText >
-        <hr className={css.line} />
+        <hr className={css["line-divisor"]} />
         <MyText styleName="petUbication">{ubication}</MyText>
       </div>
       {/* <div className={css.root__button}> */}

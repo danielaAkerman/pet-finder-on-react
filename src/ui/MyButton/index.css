@@ -1,18 +1,22 @@
 .root {
   width: 144px;
   background-color: #667058;
+  color: #fff;
   border-radius: 5px;
   padding: 10px;
   border: none;
+  margin: 5px;
 }
 
 .root:hover {
   background-color: #858e79;
+  color: #000;
   transition: 1s;
 }
 
 .root:active {
   background-color: #545b49;
+  color: #858e79;
   transition: 1s;
 }
 

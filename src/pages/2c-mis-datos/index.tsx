@@ -1,6 +1,6 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
-// import { state } from "../../state";
+import css from "./index.css";
+
 import { userDataAtom } from "../../atoms";
 import { useRecoilState } from "recoil";
 import { MyInput } from "../../ui/MyInput"
@@ -54,14 +54,14 @@ function MisDatosPage() {
   }
 
   return (
-    <div>
+    <div className={css.root}>
       <h1>Mis Datos</h1>
 
       <div></div>
 
       <label>Completa sólo los campos que desees actualizar</label>
 
-      <form onSubmit={formSubmitted}>
+      <form onSubmit={formSubmitted} className={css.form}>
 
         <MyInput label="Nombre" name="nombre" defaultValue={userFullnameState}></MyInput>
         <MyInput label="Email" name="email" defaultValue={userEmailState} type="email"></MyInput>

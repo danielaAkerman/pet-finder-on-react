@@ -2,6 +2,9 @@ import React, { useEffect } from "react";
 import { userDataAtom } from "../../atoms";
 import { useRecoilState } from "recoil";
 import { useNavigate } from "react-router-dom";
+import { MyInput } from "../../ui/MyInput";
+import { MainButton } from "../../ui/MyButton";
+import css from "./index.css"
 
 
 // const url = "http://127.0.0.1:3000";
@@ -11,7 +14,7 @@ function SignUpPage() {
   const navigate = useNavigate();
   const [userDataState, setUserDataState] = useRecoilState(userDataAtom);
 
-  const ubication:any={}
+  const ubication: any = {}
   ubication.lat = sessionStorage.getItem("lat");
   ubication.lng = sessionStorage.getItem("lng");
   const hayUbicacion = ubication.lat != "";
@@ -64,7 +67,7 @@ function SignUpPage() {
           userData.userId = data.user_id;
           // console.log()
           setUserDataState(userData);
-          
+
           localStorage.setItem("token", userData.token.toString());
           console.log("se guarda token", userData.token);
 
@@ -81,42 +84,31 @@ function SignUpPage() {
     }
   }
   return (
-    <div>
+    <div className={css.root}>
       <h1>Crear cuenta</h1>
 
       <form
-        className="form-signup"
+        className={css.form}
         onSubmit={submittedSignUpForm}
         style={{ display: "flex", flexDirection: "column" }}
       >
-        <label>
-          <span>Nombre</span>
-          <input name="nombre" />
-        </label>
 
-        <label>
-          <span>Email</span>
-          <input name="email" type="email" />
-        </label>
 
-        <label>
-          <span>Contraseña</span>
-          <input name="password" type="password" />
-        </label>
+        <MyInput name="nombre" label="Nombre" type="text" />
+        <MyInput name="email" label="Email" type="email" />
+        <MyInput name="password" label="Contraseña" type="password" />
+        <MyInput name="password2" label="Repetir Contraseña" type="password" />
+        <MainButton>Ingresar</MainButton>
 
-        <label>
-          <span>Repetir Contraseña</span>
-          <input name="password2" type="password" />
-        </label>
 
-        <div className="alerta-password"></div>
-
-        <button>Ingresar</button>
       </form>
 
-      <div>
+      <hr className={css["line-divisor"]} />
+      
+      <div className={css.redirect}>
         <label>¿Ya tenes cuenta?</label>
-        <button onClick={navigateToLogIn}>Ir a log in</button>
+        <div onClick={navigateToLogIn}>
+          <MainButton>Ir a log in</MainButton></div>
       </div>
     </div>
   );
