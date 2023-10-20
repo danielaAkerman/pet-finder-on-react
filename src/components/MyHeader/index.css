@@ -4,7 +4,8 @@
   align-items: center;
   background-color: #a3ab94;
   height: 44px;
-  padding-right: 4px;
+  /* padding-right: 4px; */
+  padding: 10px;
 }
 
 .burger {
@@ -15,8 +16,6 @@
   height: 44px;
 
 }
-
-
 
 /* @media (min-width: 701px) {
   .burger {
@@ -37,7 +36,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 5px;
+  gap: 15px;
 }
 
 .header_item {
@@ -45,10 +44,9 @@
   text-decoration: none;
 }
 
-.header_item:hover {
-  text-decoration: underline;
-  /* text-decoration: none; */
-}
+/* .header_item:hover {
+  text-decorationline;
+} */
 
 .header_close {
   display: none;

@@ -34,13 +34,13 @@ function BurgerMenu({ isOpen, onClose }) {
   }
 
   return (
-    <div>
+    <div  >
       <div
-        className={css.menu}
+        className={css.menu} style={{ display: isOpen ? "flex" : "none" }}
       >
 
         {userFullname ? (
-          <div className={css.header_items} style={{ display: isOpen ? "flex" : "none" }}>
+          <div className={css.header_items} >
             <button className={css.header_close} onClick={onClose}>X</button>
             <span className={css.header_item}>Hola {userFullname}</span>
             <Link to={"/mis-datos"} className={css.header_item} onClick={onClose}>
@@ -61,7 +61,7 @@ function BurgerMenu({ isOpen, onClose }) {
             </span>
           </div>
         ) : (
-          <div className={css.header_items} style={{ display: isOpen ? "flex" : "none" }}>
+          <div className={css.header_items} >
 
 
 

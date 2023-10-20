@@ -15,6 +15,7 @@
 
 .input:focus {
   outline: none;
-  background-color: #ebe8e3;
+  background-color: #667058;
+  color: #fff;
   transition: .5s;
 }
