@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import css from "./index.css";
 import { userFullnameSelector } from "../../atoms";
 import { useRecoilValue } from "recoil";
@@ -6,6 +6,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { userDataAtom } from "../../atoms";
 import { useRecoilState } from "recoil";
 import pet from "../../assets/img/dog.png"
+import burger from "../../assets/img/burger.png"
+import { BurgerMenu } from "../BurgerMenu";
 
 
 // import { ubicationState } from "../../atoms";
@@ -15,6 +17,8 @@ import pet from "../../assets/img/dog.png"
 function MyHeader() {
   const navigate = useNavigate();
   const [userDataState, setUserDataState] = useRecoilState(userDataAtom);
+  // const [mostrarMyPet, setMostrarMyPet] = useState(false);
+  const [mostrarBurgerMenu, setMostrarBurgerMenu] = useState(false);
 
   const ubication: any = {};
   ubication.lat = sessionStorage.getItem("lat");
@@ -50,15 +54,20 @@ function MyHeader() {
       navigate("/", { replace: true });
     }
   }
+
+  // function showMenu(){
+  //   setMostrarBurgerMenu(true)
+  // }
   return (
     <div className={css.root}>
       <div onClick={brandLogo} className={css.img_container}>
-        <img src={pet}  className={css.img}  />
+        <img src={pet} className={css.img} />
       </div>
       {userFullname ? (
         <div className={css.header_items}>
+          <button className={css.header_close}>X</button>
           <span className={css.header_item}>Hola {userFullname}</span>
-          <Link to={"/mis-datos"} className={css.header_item}>
+          <Link to={"/mis-datos"} className={css.header_item} >
             Mis datos
           </Link>
           <Link to={"/mis-mascotas"} className={css.header_item}>
@@ -77,6 +86,7 @@ function MyHeader() {
         </div>
       ) : (
         <div className={css.header_items}>
+          <button className={css.header_close}>X</button>
           <Link to={"/sign-up"} className={css.header_item}>
             Registrarse
           </Link>
@@ -85,6 +95,23 @@ function MyHeader() {
           </Link>
         </div>
       )}
+
+      <div className={css.burger} >
+
+
+        <div className={css.root__button}
+          onClick={() => {
+            setMostrarBurgerMenu(true)
+          }}>
+
+          <img src={burger} alt="" className={css.burger_icon} />
+        </div>
+
+        <BurgerMenu isOpen={mostrarBurgerMenu} onClose={() => setMostrarBurgerMenu(false)} />
+
+
+
+      </div>
     </div>
   );
 }

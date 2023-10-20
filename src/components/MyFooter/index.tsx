@@ -6,7 +6,7 @@ function MyFooter() {
 
   return (
     <div className={css.root}>
-      FOOOTER
+      © 2023 | Daniela Akerman
     </div>
   );
 }
