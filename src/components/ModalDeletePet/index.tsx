@@ -40,13 +40,13 @@ function ModalDeletePet({ isOpen, onClose }) {
           </button>
           {/* Acá puedo poner como children un componente que sea el form */}
           <h3>¿Deseas eliminar la publicación de {petDataModalState.name}?</h3>
-          <div className={css.buttonsContent}>
+          <div className={css["buttons_content"]}>
 
           <div onClick={DeletePet}>
-            <MainButton>YES</MainButton>
+            <MainButton>Eliminar</MainButton>
           </div>
           <div onClick={onClose}>
-            <MainButton>NO</MainButton>
+            <MainButton>Cancelar</MainButton>
           </div>
           </div>
         </div>

@@ -6,6 +6,7 @@
   flex-direction: column;
   width: 350px;
   margin: 15px;
+  gap: 15px;
 }
 
 .root__picture {
@@ -29,7 +30,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  /* padding: 20px; */
 }
 
 .modal {
@@ -64,10 +65,10 @@
 
 .button {
   background-color: pink;
-  margin: auto auto 20px auto;
+  /* margin: auto auto 20px auto; */
   border: none;
   border-radius: 5px;
-  padding: 10px;
+  /* padding: 10px; */
 
 }
 
@@ -84,7 +85,7 @@
 }
 
 .line-divisor{
-  margin: 25px;
+  margin: 12px;
   width: 75%;
   border: none;
   background-color: black;

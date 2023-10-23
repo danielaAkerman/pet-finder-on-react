@@ -33,19 +33,31 @@
   border-radius: 1rem;
   position: relative;
 }
+
 .modal_close {
   position: absolute;
   top: 0;
   right: 0;
   margin: .5rem;
+  border-radius: 100%;
+  width: 25px;
+  height: 25px;
+  border: none;
+  background-color: #667058;
+  color: #fff;
 }
+
 
 .modal_show-no {
   transform: scale(1);
 }
-.modal_input {
-}
-.buttonsContent{
+
+.modal_input {}
+
+.buttons_content {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
 }

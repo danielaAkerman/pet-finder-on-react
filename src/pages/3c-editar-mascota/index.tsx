@@ -3,6 +3,7 @@ import { MyInput } from "../../ui/MyInput";
 import { MainButton } from "../../ui/MyButton";
 import { useRecoilValue } from "recoil";
 import { userIdSelector } from "../../atoms";
+import css from "./index.css"
 
 const url = "https://lostpets.onrender.com";
 
@@ -59,24 +60,26 @@ function EditarMascotaPage() {
 
 
   return (
-    <div>
+    <div className={css.root}>
 
       <h1>Editar Mascota</h1>
 
-      <form onSubmit={submittedPet}>
+      <form onSubmit={submittedPet} className={css.form}>
 
         <MyInput label="Nombre de tu mascota" name="pet-name" defaultValue={name}></MyInput>
 
-        <img src={picture} style={{ display: showPetImg ? "grid" : "none" }} />
+        <img src={picture} style={{ display: showPetImg ? "grid" : "none" }} className={css.pet_image} />
 
-        <div className="dropzone"> Arrastra tu imagen aquí
+        <div className={css["dropzone"]}> Arrastra tu imagen aquí
           <div>
             <input
               type="file"
               multiple
               onChange={(e) => convertiraBase64(e.target.files)}
+              className={css.input_img}
             />
-          </div></div>
+          </div>
+        </div>
 
         <div onClick={() => deletePetImage()}>
           <MainButton type="button">Eliminar esta imagen</MainButton>
@@ -84,7 +87,9 @@ function EditarMascotaPage() {
 
         <MyInput label="Ciudad o barrio" name="pet-ubication" defaultValue={ubication}></MyInput>
 
-        <div><iframe src="https://www.google.com/maps/d/u/0/embed?mid=1MITVPExrphDfLkJqao9bzZtL7BO7Fv4&ehbc=2E312F" width="640" height="480"></iframe></div>
+        <div className={css.map}>
+          <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1MITVPExrphDfLkJqao9bzZtL7BO7Fv4&ehbc=2E312F" width="100%" height="344"></iframe>
+        </div>
 
         <MainButton type="submit">Publicar</MainButton>
 
