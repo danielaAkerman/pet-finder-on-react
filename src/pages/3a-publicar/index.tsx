@@ -4,8 +4,6 @@ import React, { useEffect, useState } from "react";
 import css from "./index.css";
 import { useNavigate } from "react-router-dom";
 
-// import Map from 'react-map-gl';
-// import 'mapbox-gl/dist/mapbox-gl.css';
 import { MyInput } from "../../ui/MyInput";
 import { MainButton } from "../../ui/MyButton";
 
