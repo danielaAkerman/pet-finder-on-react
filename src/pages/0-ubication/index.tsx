@@ -25,6 +25,10 @@ function UbicationPage() {
   //   navigate("/pets", { replace: true });
   // }
 
+
+// const APIKEY="AIzaSyAsyT2n5SiGY_i6yvpLFAuK5N4Fc7qEWzE"
+
+
   const userToken = localStorage.getItem("token");
   // const mantenerIniciada = localStorage.getItem("mantener-iniciada");
 

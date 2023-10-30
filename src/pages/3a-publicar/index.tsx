@@ -1,7 +1,8 @@
 import { userIdSelector } from "../../atoms";
 import { useRecoilValue } from "recoil";
 import React, { useEffect, useState } from "react";
-import css from "./index.css"
+import css from "./index.css";
+import { useNavigate } from "react-router-dom";
 
 // import Map from 'react-map-gl';
 // import 'mapbox-gl/dist/mapbox-gl.css';
@@ -12,8 +13,13 @@ import { MainButton } from "../../ui/MyButton";
 const url = "https://lostpets.onrender.com";
 function PublicarPage() {
   const userId = useRecoilValue(userIdSelector);
-  const lat = parseInt(sessionStorage.getItem("lat"));
-  const lng = parseInt(sessionStorage.getItem("lng"));
+  const navigate = useNavigate();
+  const ubication: any = {};
+  ubication.lat = sessionStorage.getItem("lat");
+  ubication.lng = sessionStorage.getItem("lng");
+  const hayUbicacion = ubication.lat != "";
+
+  
   const datosNewPet: any = {};
 
   const convertiraBase64 = (archivos) => {
@@ -32,28 +38,65 @@ function PublicarPage() {
     console.log("submitedddddddddddd")
 
     datosNewPet.userId = userId;
-    datosNewPet.name = e.target.name.value;
-    datosNewPet.ubication = e.target.ubication.value;
+    datosNewPet.name = (e.target.name.value).toUpperCase();
+    datosNewPet.ubication = (e.target.ubication.value).toUpperCase();
     datosNewPet.status = "lost";
-    // MOCK:
-    datosNewPet.last_location_lat = -31.4331816;
-    datosNewPet.last_location_lng = -64.2249415;
 
-    // console.log({ datosNewPet });
+    const MAPKEY = "pk.58d33aa8a8d98aab3cf1c2140e1014e3"
+    const PLACE = 
+    ((e.target.ubication.value)
+      .replace(',', '%2C'))
+      .replace(' ', '%20')
+      .replace('Á', '%C3%81')
+      .replace('É', '%C3%89')
+      .replace('Í', '%C3%8D')
+      .replace('Ó', '%C3%93')
+      .replace('Ú', '%C3%9A')
 
-    fetch(url + "/new-pet", {
-      method: "post",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(datosNewPet),
-    })
+    fetch(
+
+      `https://us1.locationiq.com/v1/search?key=${MAPKEY}&q=${PLACE}%2C%20argentina&format=json`
+      // %2C = ,
+      // %20 = spc
+    )
       .then((res) => {
         return res.json();
       })
       .then((data) => {
-        // console.log(data);
-      });
+        console.log("LAT:", data[0].lat, "LON:", data[0].lon
+        )
+
+        datosNewPet.last_location_lat = data[0].lat;
+        datosNewPet.last_location_lng = data[0].lon;
+
+        console.log({ datosNewPet });
+
+
+
+
+        fetch(url + "/new-pet", {
+          method: "post",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(datosNewPet),
+        })
+          .then((res) => {
+            return res.json();
+          })
+          .then((data) => {
+            // console.log(data);
+          });
+      })
+
+      if (hayUbicacion) {
+        console.log("ya hay ubicacion, se redirecciona a pets");
+        navigate("/pets", { replace: true });
+      } else {
+        console.log("NO hay ubicacion, se redirecciona a /");
+        navigate("/", { replace: true });
+      }
+
   }
 
   return (
@@ -77,7 +120,7 @@ function PublicarPage() {
 
         <div className={css.map}>
           <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1MITVPExrphDfLkJqao9bzZtL7BO7Fv4&ehbc=2E312F" width="100%" height="344"></iframe>
-          </div>
+        </div>
 
         <MainButton type="submit">Publicar</MainButton>
       </form>

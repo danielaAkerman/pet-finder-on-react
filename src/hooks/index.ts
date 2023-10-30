@@ -6,6 +6,7 @@ import {
   useRecoilValue,
   selector,
   useSetRecoilState,
+  RecoilState,
 } from "recoil";
 
 const userState = atom({
@@ -24,5 +25,6 @@ function useUserUbication(ubication) {
     setUserUbication(ubication);
   });
 }
+
 
 export { useUserUbication };
