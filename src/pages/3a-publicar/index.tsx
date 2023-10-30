@@ -19,7 +19,7 @@ function PublicarPage() {
   ubication.lng = sessionStorage.getItem("lng");
   const hayUbicacion = ubication.lat != "";
 
-  
+
   const datosNewPet: any = {};
 
   const convertiraBase64 = (archivos) => {
@@ -43,15 +43,15 @@ function PublicarPage() {
     datosNewPet.status = "lost";
 
     const MAPKEY = "pk.58d33aa8a8d98aab3cf1c2140e1014e3"
-    const PLACE = 
-    ((e.target.ubication.value)
-      .replace(',', '%2C'))
-      .replace(' ', '%20')
-      .replace('Á', '%C3%81')
-      .replace('É', '%C3%89')
-      .replace('Í', '%C3%8D')
-      .replace('Ó', '%C3%93')
-      .replace('Ú', '%C3%9A')
+    const PLACE =
+      ((datosNewPet.ubication)
+        .replace(',', '%2C'))
+        .replace(' ', '%20')
+        .replace('Á', '%C3%81')
+        .replace('É', '%C3%89')
+        .replace('Í', '%C3%8D')
+        .replace('Ó', '%C3%93')
+        .replace('Ú', '%C3%9A')
 
     fetch(
 
@@ -63,13 +63,15 @@ function PublicarPage() {
         return res.json();
       })
       .then((data) => {
-        console.log("LAT:", data[0].lat, "LON:", data[0].lon
+        const lat = +(data[0].lat)
+        const lon = +(data[0].lon)
+        console.log("LAT:", lat, typeof lat, "LON:", lon
         )
 
-        datosNewPet.last_location_lat = data[0].lat;
-        datosNewPet.last_location_lng = data[0].lon;
+        datosNewPet.last_location_lat =lat;
+        datosNewPet.last_location_lng =lon;
 
-        console.log({ datosNewPet });
+        console.log("datosNewPet", datosNewPet);
 
 
 
@@ -85,17 +87,20 @@ function PublicarPage() {
             return res.json();
           })
           .then((data) => {
-            // console.log(data);
+            console.log("DATA RESPUESTA", data);
           });
+
+
+
+        if (hayUbicacion) {
+          console.log("ya hay ubicacion, se redirecciona a pets");
+          navigate("/pets", { replace: true });
+        } else {
+          console.log("NO hay ubicacion, se redirecciona a /");
+          navigate("/", { replace: true });
+        }
       })
 
-      if (hayUbicacion) {
-        console.log("ya hay ubicacion, se redirecciona a pets");
-        navigate("/pets", { replace: true });
-      } else {
-        console.log("NO hay ubicacion, se redirecciona a /");
-        navigate("/", { replace: true });
-      }
 
   }
 

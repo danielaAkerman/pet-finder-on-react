@@ -54,7 +54,7 @@ export const lostPetsNearYouSelector = selector({
       url + "/pets-near-me" + "?lat=" + lat + "&lng=" + lng
     );
     const results = await res.json();
-
+    console.log("RESULTS DESDE ATOMS", results)
     return results;
   },
 });
