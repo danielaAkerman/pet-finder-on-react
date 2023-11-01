@@ -86,17 +86,19 @@ function PublicarPage() {
           })
           .then((data) => {
             console.log("DATA RESPUESTA", data);
+            
+            if (hayUbicacion) {
+              console.log("ya hay ubicacion, se redirecciona a pets");
+              navigate("/pets", { replace: true });
+            } else {
+              console.log("NO hay ubicacion, se redirecciona a /");
+              navigate("/", { replace: true });
+            }
+
           });
 
 
 
-        if (hayUbicacion) {
-          console.log("ya hay ubicacion, se redirecciona a pets");
-          navigate("/pets", { replace: true });
-        } else {
-          console.log("NO hay ubicacion, se redirecciona a /");
-          navigate("/", { replace: true });
-        }
       })
 
 

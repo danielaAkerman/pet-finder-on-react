@@ -8,6 +8,7 @@ import {
   useSetRecoilState,
   RecoilState,
 } from "recoil";
+import { lostPetsNearYouSelector } from "../atoms";
 
 const userState = atom({
   key: "userstate",
@@ -26,5 +27,11 @@ function useUserUbication(ubication) {
   });
 }
 
+function useGetLostPetsNearMe(){
 
-export { useUserUbication };
+  const mascotasCercanas = useRecoilValue(lostPetsNearYouSelector); // Aca tengo el array de mascotas cercanas para mostrar
+
+  return mascotasCercanas
+}
+
+export { useUserUbication, useGetLostPetsNearMe };

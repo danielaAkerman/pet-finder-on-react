@@ -3,17 +3,19 @@ import { lostPetsNearYouSelector } from "../../atoms";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { LostPetItem } from "../../components/LostPetItem";
 import css from "./index.css";
+import { useGetLostPetsNearMe } from "../../hooks";
 
 
 function PetsPage() {
 
+  const mascotasCercanas=useGetLostPetsNearMe()
 
 
-  const mascotasCercanas = useRecoilValue(lostPetsNearYouSelector); // Aca tengo el array de mascotas cercanas para mostrar
-  useEffect(
-    () => console.log("effect", mascotasCercanas), //Buscar las mascotas cerca tuyo
-    [mascotasCercanas]
-  );
+  // const mascotasCercanas = useRecoilValue(lostPetsNearYouSelector); // Aca tengo el array de mascotas cercanas para mostrar
+  // useEffect(
+  //   () => console.log("effect", mascotasCercanas), //Buscar las mascotas cerca tuyo
+  //   [mascotasCercanas]
+  // );
 
   // const userToken= localStorage.getItem("token")
 

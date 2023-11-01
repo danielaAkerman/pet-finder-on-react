@@ -43,6 +43,7 @@ export const myReportedPetsSelector = selector({
   },
 });
 
+
 export const lostPetsNearYouSelector = selector({
   key: "lostPetsNearYouSelector",
   get: async () => {
@@ -53,6 +54,7 @@ export const lostPetsNearYouSelector = selector({
     const res = await fetch(
       url + "/pets-near-me" + "?lat=" + lat + "&lng=" + lng
     );
+
     const results = await res.json();
     console.log("RESULTS DESDE ATOMS", results)
     return results;
